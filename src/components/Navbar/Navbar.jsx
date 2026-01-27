@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 export default function Navbar() {
     return (
         <>
-            <div className="w-full flex items-center py-7.5 px-35 bg-[#FFFFFF33]">
+            <div className="w-full flex items-center py-7.5 px-35 bg-[#FFFFFF33]  fixed">
                 <NavbarLogo />
                 <div className="nav-links flex items-center gap-10 mr-auto">
                     <LinkItem to={"/"}>home</LinkItem>
