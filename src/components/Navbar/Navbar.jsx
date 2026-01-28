@@ -1,24 +1,52 @@
-import NavbarLogo from './NavbarLogo';
-import LinkItem from '../ui/LinkItem';
-import Button from '../ui/Button';
+import NavbarLogo from "./NavbarLogo";
+import LinkItem from "../ui/LinkItem";
+import Button from "../ui/Button";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation();
+  let links = [
+    { nav: "home", path: "/" },
+    { nav: "books", path: "/book" },
+    { nav: "about us", path: "/about" },
+  ];
   return (
     <>
       <div className="w-full flex items-center justify-center py-7.5 px-35 bg-[#FFFFFF33]">
-        <div className="container flex">
-          <NavbarLogo />
-          <div className="nav-links flex items-center gap-10 mr-auto">
-            <LinkItem to={"/"}>home</LinkItem>
-            <LinkItem to={"books"}>books</LinkItem>
-            <LinkItem to={"about"}>about us</LinkItem>
+        <div className="container flex items-center justify-between ">
+          <div className="flex ">
+            <LinkItem to={"/"}>
+              <NavbarLogo />
+            </LinkItem>
+            <div className="flex gap-5">
+              {links.map((el, index) => {
+                const isActive = location.pathname === el.path;
+                return (
+                  <LinkItem
+                    className={
+                      isActive
+                        ? "text-mainColor text-lg font-semibold capitalize hover:text-[#ae1e5f]"
+                        : "text-white text-lg font-semibold capitalize hover:text-mainColor"
+                    }
+                    key={index}
+                    to={el.path}
+                  >
+                    {el.nav}
+                  </LinkItem>
+                );
+              })}
+            </div>
           </div>
           <div className="nav-btns flex items-center gap-3">
-            <Button width={"fit"} isMainBtn={true}>login</Button>
-            <Button width={"fit"} isMainBtn={false}>sign up</Button>
+            <Button width={"fit"} isMainBtn={true}>
+              <Link to={"/login"}> login</Link>
+            </Button>
+            <Button width={"fit"} isMainBtn={false}>
+              <Link to={"/signup"}> signup</Link>
+            </Button>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

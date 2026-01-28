@@ -7,7 +7,7 @@ import NavbarLogo from "../Navbar/NavbarLogo";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#3B2F4A] text-white py-20 px-4">
+    <footer className="w-full bg-scandColor text-white py-20 px-4">
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
         {/* الجزء العلوي */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
@@ -49,7 +49,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 bg-[#4B3D5A] px-4 py-2 rounded-lg cursor-pointer hover:bg-[#524463] transition-all">
+          <div className="flex items-center gap-3  px-4 py-2 rounded-lg cursor-pointer hover:bg-[#524463] transition-all">
             <FaEarthAmericas />
             <span className="flex items-center font-medium">
               English <MdKeyboardArrowRight className="text-xl" />
