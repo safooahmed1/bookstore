@@ -59,10 +59,6 @@ export default function SignupPage() {
 
   return (
     <>
-      <div className='h-84.5'>
-        <Herosection />
-      </div>
-
       <div className="w-full  bg-[#F5F5F5] flex flex-col items-center justify-center gap-6 ">
         {/* logic componant (formik) */}
         <Formik initialValues={{
@@ -78,7 +74,7 @@ export default function SignupPage() {
             handleRegister(values);
           }} >
           {/* ui componant  */}
-          <Form className="w-200 p-4 bg-[#F5F5F5] flex flex-col gap-4">
+          <Form className="p-4 bg-[#F5F5F5] flex flex-col gap-4 py-6">
             <div className='grid grid-cols-2 gap-5'>
               <div className='flex flex-col gap-1 font-semibold text-[18px] text-[#222222] '>
                 <span>First Name</span>
@@ -145,7 +141,6 @@ export default function SignupPage() {
             </div>
           </Form>
         </Formik>
-        <Footer />
       </div>
     </>
   )
