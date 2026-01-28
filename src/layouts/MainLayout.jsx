@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer";
 export default function MainLayout() {
   return (
     <>
-      <div className="">
+      <div className="font-open">
         <div className="h-84.5">
           <Herosection />
         </div>

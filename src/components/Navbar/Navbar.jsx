@@ -25,8 +25,8 @@ export default function Navbar() {
                   <LinkItem
                     className={
                       isActive
-                        ? "text-mainColor text-lg font-semibold capitalize hover:text-[#ae1e5f]"
-                        : "text-white text-lg font-semibold capitalize hover:text-mainColor"
+                        ? "text-mainColor text-lg font-semibold capitalize hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor"
+                        : "text-white text-lg font-semibold capitalize hover:text-mainColor hover:drop-shadow-lg hover:drop-shadow-mainColor"
                     }
                     key={index}
                     to={el.path}
@@ -38,10 +38,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className="nav-btns flex items-center gap-3">
-            <Button width={"fit"} isMainBtn={true}>
+            <Button className="w-fit" isMainBtn={true}>
               <Link to={"/login"}> login</Link>
             </Button>
-            <Button width={"fit"} isMainBtn={false}>
+            <Button className="w-fit" isMainBtn={false}>
               <Link to={"/signup"}> signup</Link>
             </Button>
           </div>
