@@ -1,22 +1,20 @@
-import axios from 'axios';
-import { Formik } from 'formik';
-import { useNavigate } from 'react-router-dom';
-import * as Yup from 'yup';
-import UiComponant from '../components/Authentication/UiComponant';
-import Footer from '../components/footer/Footer';
-import Herosection from '../components/HeroSection/Herosection';
+import axios from "axios";
+import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
+import UiComponantLogin from "../components/Authentication/UiComponantLogin";
 
 export default function LoginPage() {
   const navigate = useNavigate();
 
-  const validationSchema = Yup.object({
+  const LoginSchema = Yup.object({
     email: Yup.string().email().required(),
     password: Yup.string().required(),
   });
 
   const handleSubmit = async (values) => {
-    const domain = 'https://bookstore.eraasoft.pro/api';
-    const endPoint = '/login';
+    const domain = "https://bookstore.eraasoft.pro/api";
+    const endPoint = "/login";
     const url = domain + endPoint;
 
     try {
@@ -31,13 +29,21 @@ export default function LoginPage() {
     <>
       <div className=" bg-[#F5F5F5] flex flex-col items-center justify-center gap-10 font-open py-6">
         <div className="flex justify-center w-full">
-          <h1 className="font-semibold font-open text-mainColor">Welcome Back!</h1>
+          <h1 className="font-semibold font-open text-mainColor">
+            Welcome Back!
+          </h1>
         </div>
         {/* logic componant (formik) */}
-        <div className='flex flex-col  '>
-          <Formik initialValues={{ email: '', password: '' }} onSubmit={(values) => { handleSubmit(values) }}>
+        <div className="flex flex-col  ">
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={LoginSchema}
+            onSubmit={(values) => {
+              handleSubmit(values);
+            }}
+          >
             {/* ui componant  */}
-            <UiComponant email={"email"} password={"password"} />
+            <UiComponantLogin email={"email"} password={"password"} />
           </Formik>
         </div>
       </div>

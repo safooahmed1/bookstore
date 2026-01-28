@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form } from "formik";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-export default function UiComponant({ email, password }) {
+export default function UiComponantLogin({ email, password }) {
   return (
     <Form className="w-200 p-4 bg-[#F5F5F5] flex flex-col gap-6">
       <div className="flex flex-col gap-1 font-semibold text-[18px] text-[#222222]">
@@ -34,8 +34,8 @@ export default function UiComponant({ email, password }) {
       </div>
 
       <button
-        type="sumbit"
-         className="bg-mainColor p-4 rounded-lg font-semibold  text-[18px] text-white"
+        type="submit"
+        className="bg-mainColor p-4 rounded-lg font-semibold  text-[18px] text-white"
       >
         Login
       </button>
