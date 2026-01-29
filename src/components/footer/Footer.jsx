@@ -8,7 +8,7 @@ import NavbarLogo from "../Navbar/NavbarLogo";
 export default function Footer() {
   return (
     <footer className="w-full bg-scandColor text-white py-20 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+      <div className=" mx-auto flex flex-col gap-8 container">
         {/* الجزء العلوي */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row items-center gap-10">

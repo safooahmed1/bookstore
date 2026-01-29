@@ -12,8 +12,8 @@ export default function Navbar() {
   ];
   return (
     <>
-      <div className="w-full flex items-center justify-center py-7.5 px-35 bg-[#FFFFFF33]">
-        <div className="container flex items-center justify-between ">
+      <div className="w-full flex items-center justify-center py-7.5 px-4 bg-[#FFFFFF33]">
+        <div className="container w-full flex items-center justify-between ">
           <div className="flex ">
             <LinkItem to={"/"}>
               <NavbarLogo />

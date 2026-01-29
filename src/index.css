@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @plugin "daisyui";
 
 @theme {
@@ -7,4 +6,8 @@
   --color-mainColor: #d9176c;
   --color-scandColor: #3b2f4a;
   --font-open: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  font-family: "Open Sans", ui-sans-serif, system-ui, sans-serif;
 }
