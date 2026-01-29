@@ -1,8 +1,9 @@
 import axios from "axios";
-import { Formik } from "formik";
+import { Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import UiComponantSignup from "../components/Authentication/UiComponantSignup";
+import UiComponant from "../components/Authentication/UiComponant";
+import SoBtn from "../components/Authentication/SoBtn";
 export default function SignupPage() {
   const navigate = useNavigate();
 
@@ -51,8 +52,6 @@ export default function SignupPage() {
     confirmpassword: Yup.string()
       .oneOf([Yup.ref("password")], "Passwords do not match")
       .required("Confirm password is required"),
-
-    terms: Yup.boolean().oneOf([true], "You must accept the terms"),
   });
 
   return (
@@ -66,7 +65,6 @@ export default function SignupPage() {
             email: "",
             password: "",
             confirmpassword: "",
-            terms: false,
           }}
           validationSchema={SignupSchema}
           onSubmit={(values) => {
@@ -74,13 +72,51 @@ export default function SignupPage() {
           }}
         >
           {/* ui componant  */}
-          <UiComponantSignup
-            firstname="firstname"
-            lastname="lastname"
-            email="email"
-            password="password"
-            confirmpassword="confirmpassword"
-          />
+          <Form className="w-200 p-4 bg-[#F5F5F5] flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-5">
+              <UiComponant
+                name="firstname"
+                label="First Name"
+                placeholder="John"
+                type={"firstname"}
+              />
+              <UiComponant
+                name="lastname"
+                label="Last Name"
+                placeholder="Smith"
+                type={"lastname"}
+              />
+            </div>
+
+            <UiComponant
+              name="email"
+              label="Email"
+              placeholder="example@gmail.com"
+              type={"email"}
+            />
+
+            <UiComponant
+              name="password"
+              label="Password"
+              placeholder="Enter password"
+              type={"password"}
+            />
+            <UiComponant
+              name="confirmpassword"
+              label="Confirm password"
+              placeholder="Enter your password"
+              type={"password"}
+            />
+
+            <SoBtn
+              p="Already have an account?"
+              to={"/login"}
+              ptow=" Login"
+              ask=" "
+              stet=" Agree with Terms & Conditions"
+              lable={"Signup"}
+            />
+          </Form>
         </Formik>
       </div>
     </>
