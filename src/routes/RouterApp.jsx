@@ -14,16 +14,23 @@ export default function RouterApp() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           {/* Auth Pages */}
-          <Route index element={<HomePage/>} />
-          <Route path="about" element={<AboutusPage/>} />
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutusPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
+          <Route path="forget-password" element={<ForgetPasswordPage />} />
           <Route path="add-code" element={<AddCodePage />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
-          <Route path="forget-password" element={<ForgetPasswordPage />} />
-          <Route path="*" element={<div className=" flex items-center justify-center h-80 w-full bg-backGrond text-scandColor text-5xl font-semibold ">Error 404 | Not Fond</div>}/>
+          <Route
+            path="*"
+            element={
+              <div className=" flex items-center justify-center h-80 w-full bg-backGrond text-scandColor text-5xl font-semibold ">
+                Error 404 | Not Fond
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </>
-  )
+  );
 }

@@ -6,7 +6,7 @@ export default function CommunicationMain() {
   return (
     <>
       <div
-        className="w-full h-197.5 bg-cover bg-[#3B2F4A]"
+        className="w-full p-20 bg-cover bg-[#3B2F4A]"
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="container  m-auto w-full flex justify-between items-center h-full ">

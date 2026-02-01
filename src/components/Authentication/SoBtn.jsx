@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import BtnType from "./BtnType";
+import BtnType from "../ui/BtnType";
 
-export default function SoBtn({p,to ,ptow , ask , stet ,lable}) {
+export default function SoBtn({p,to ,ptow , ask , stet , btn}) {
     return (
         <div>
             <div className='flex justify-between items-center'>
@@ -11,8 +11,8 @@ export default function SoBtn({p,to ,ptow , ask , stet ,lable}) {
                 </div>
                 <span className='text-mainColor active:text-[#8c1347]'>{ask}</span>
             </div>
-                <BtnType lable={lable}/>
-            
+
+           <BtnType btn={btn}/>
             <div className='mt-5'>
                 <p className='text-black font-semibold text-center '>{p} 
                     <Link to={to} className='text-mainColor'>  {ptow}</Link>

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-export default function LinkItem({ className, children, to }) {
-  return (
-    <>
-      <Link to={to} className={className}>
-        {children}
-      </Link>
-    </>
-  );
+export default function LinkItem({ children, to, }) {
+    return (
+        <>
+            <Link to={to} className="text-white text-lg font-semibold capitalize hover:text-mainColor">
+                {children}
+            </Link>
+        </>
+    )
 }
