@@ -2,6 +2,7 @@ import BestSellerSection from "../components/Best Seller/BestSellerSection";
 import MainBookCard from "../components/bookCard/MainBookCard";
 import Herosection from "../components/HeroSection/Herosection";
 import Assemble from "../components/sectionhome/Assemble";
+import FlashSale from "../sections/FlashSale/FlashSale";
 
 export default function HomePage() {
   return (
@@ -15,8 +16,12 @@ export default function HomePage() {
       <div className="w-full bg-[#3B2F4A]">
         <BestSellerSection />
       </div>
-      <div className="container m-auto h-56">
-        {/* <MainBookCard /> */}
+      <div className="container flex  m-auto p-20 gap-6">
+        <MainBookCard />
+        <MainBookCard />
+      </div>
+      <div>
+        <FlashSale/>
       </div>
     </div>
   );

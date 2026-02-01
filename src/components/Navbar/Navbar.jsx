@@ -22,7 +22,7 @@ export default function Navbar() {
               {links.map((el, index) => {
                 const isActive = location.pathname === el.path;
                 return (
-                  <LinkItem
+                  <Link
                     className={
                       isActive
                         ? "text-mainColor text-lg font-semibold capitalize hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor"
@@ -32,7 +32,7 @@ export default function Navbar() {
                     to={el.path}
                   >
                     {el.nav}
-                  </LinkItem>
+                  </Link>
                 );
               })}
             </div>

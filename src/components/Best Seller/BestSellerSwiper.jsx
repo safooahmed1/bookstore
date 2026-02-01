@@ -33,7 +33,7 @@ export default function BestSellerSwiper() {
         spaceBetween={30}
         loop={true}
         centeredSlides={true}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 500 }}
         modules={[Autoplay, FreeMode, Navigation]}
         navigation={true}
         className="mySwiper"
