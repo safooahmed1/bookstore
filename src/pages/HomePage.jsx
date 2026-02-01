@@ -10,7 +10,9 @@ export default function HomePage() {
       <div className="w-full bg-[#3B2F4A]">
         <BestSellerSection />
       </div>
-      <div className="container m-auto h-56"></div>
+      <div className="container m-auto h-56">
+        
+      </div>
     </div>
   );
 }
