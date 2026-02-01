@@ -7,7 +7,7 @@ import user from "../../assets/images/sectionlogo/user-headset 1.svg"
 export default function Assemble() {
     return (
         <>
-            <div className=" container h-80  flex items-center p-9">
+            <div className=" container h-80 justify-between flex items-center p-9 gap-4">
                 <Section img={car}
                     h="Fast & Reliable Shipping"
                     p="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et ultricies est. Aliquam in justo varius, sagittis neque ut, malesuada leo."
