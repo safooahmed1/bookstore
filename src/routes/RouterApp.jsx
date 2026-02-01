@@ -6,6 +6,7 @@ import ResetPasswordPage from "../pages/ResetPasswordPage";
 import ForgetPasswordPage from "../pages/ForgetPasswordPage";
 import HomePage from "../pages/HomePage";
 import MainLayout from "../layouts/MainLayout";
+import AboutusPage from "../pages/AboutusPage";
 
 export default function RouterApp() {
   return (
@@ -14,6 +15,7 @@ export default function RouterApp() {
         <Route path="/" element={<MainLayout />}>
           {/* Auth Pages */}
           <Route index element={<HomePage/>} />
+          <Route path="about" element={<AboutusPage/>} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="add-code" element={<AddCodePage />} />
