@@ -9,7 +9,7 @@ export default function CommunicationMain() {
         className="w-full p-20 bg-cover bg-[#3B2F4A]"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <div className="container  m-auto w-full flex justify-between items-center h-full ">
+        <div className="container  m-auto w-full flex justify-between h-full ">
           <CommunicationLeft />
           <CommunicationRight />
         </div>

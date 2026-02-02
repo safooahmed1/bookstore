@@ -1,5 +1,5 @@
-import FlashSaleHeader from "../FlashSale/FlashSaleHeader";
-import FlashSaleSlider from "../FlashSale/FlashSaleSlider";
+import FlashSaleHeader from "./FlashSaleHeader";
+import FlashSaleSlider from "./FlashSaleSlider";
 
 // استيراد الصور
 import time from "../../assets/images/time.png";
@@ -9,8 +9,8 @@ export default function FlashSale() {
   const dummyItems = [1, 2, 3, 4]; // عدد الكروت
 
   return (
-    <div className="w-full bg-[#F5F5F5]  p-10">
-      <div className="container mx-auto max-w-6xl px-4">
+    <div className="w-full bg-[#F5F5F5] h-176.5 py-4 border-t border-[#22222233]">
+      <div className="container mx-auto px-4">
         {/* المكون الأول: الرأس */}
         <FlashSaleHeader
           title="Flash Sale"
@@ -19,7 +19,9 @@ export default function FlashSale() {
         />
 
         {/* المكون الثاني: السلايدر */}
-        <FlashSaleSlider items={dummyItems} silider={silider} />
+        <div className="flex justify-center w-full">
+          <FlashSaleSlider items={dummyItems} silider={silider} />
+        </div>
       </div>
     </div>
   );

@@ -6,9 +6,9 @@ import Assemble from "../components/sectionhome/Assemble";
 export default function AboutusPage() {
   return (
     <>
-      <Herosection h="h-[500px]" showSearch={false} />
+      <Herosection h="h-[804px]" showSearch={false} />
       <div>
-        <div className="container m-auto">
+        <div className="container  m-auto">
           <OurMission />
         </div>
         <CommunicationMain />

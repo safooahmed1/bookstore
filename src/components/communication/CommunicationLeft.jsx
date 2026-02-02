@@ -41,13 +41,12 @@ export default function CommunicationLeft() {
             />
           </div>
           {/* input 3 */}
-          <div className="relative w-full flex items-center col-span-2 ">
-            <div className="absolute left-4 text-[#FFFFFF80]">
+          <div className="relative w-full flex items-center col-span-2">
+            <div className="absolute left-4 top-4 pe-1 text-[#FFFFFF80]">
               <LuPencil size={20} />
             </div>
-            <input
-              type="text"
-              className="w-full border border-[#FFFFFF33] bg-transparent rounded-lg  p-4 pl-12 placeholder:text-[#FFFFFF80] text-white outline-none focus:border-white transition-colors"
+            <textarea
+              className="w-full border border-[#FFFFFF33] h-38 bg-transparent rounded-lg p-4 pl-12 placeholder:text-[#FFFFFF80] text-white outline-none focus:border-white transition-colors"
               placeholder="Your Message"
             />
           </div>

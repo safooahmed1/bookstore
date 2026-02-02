@@ -2,7 +2,7 @@ import Button from "../ui/Button";
 import { LuShoppingCart } from "react-icons/lu";
 import { MdFavoriteBorder } from "react-icons/md";
 
-export default function RightComponentBookCard() {
+export default function RightComponentRecomendedCard() {
   return (
     <div className="flex flex-col gap-6">
       {/* top */}
@@ -25,12 +25,11 @@ export default function RightComponentBookCard() {
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">
-              <span className="text-2xl text-yellow-300">******</span>
+              <span className="text-2xl text-yellow-300">★★★★</span>
               <span className="font-semibold text-[#22222280] text-[12px] ">
                 {"(210 Review)"}
               </span>
             </div>
-            {/* <= STARS*/}
             <h4 className="text-[14px] text-[#22222280]">
               Rate: <span className="text-[#222222] font-semibold">4.2</span>
             </h4>

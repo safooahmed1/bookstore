@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,10 +6,10 @@ const FlashSaleSlider = ({ items, silider }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div className="relative px-12">
+    <div className="relative px-12 w-254">
       {/* زر السابق */}
       <button
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-[44px] h-[44px] bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 hover:bg-gray-50 transition-all"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 hover:bg-gray-50 transition-all"
         onClick={() => swiperRef?.slidePrev()}
       >
         <svg
@@ -30,7 +30,7 @@ const FlashSaleSlider = ({ items, silider }) => {
       <Swiper
         onSwiper={setSwiperRef}
         slidesPerView={2}
-        spaceBetween={24}
+        spaceBetween={40}
         modules={[Navigation]}
         className="rounded-xl"
         breakpoints={{
@@ -40,10 +40,10 @@ const FlashSaleSlider = ({ items, silider }) => {
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[#3B334B] text-white p-5 rounded-2xl flex gap-5 relative group shadow-xl">
+            <div className="bg-[#3B334B] w-fit text-white p-5 rounded-2xl flex gap-5 relative group shadow-xl">
               <img
                 src={silider}
-                className="w-[175px] h-[240px] rounded-lg"
+                className="w-43.75 h-60 rounded-lg"
                 alt="book"
               />
               <div className="  flex-1 flex flex-col justify-between py-1 h-40">
@@ -96,7 +96,7 @@ const FlashSaleSlider = ({ items, silider }) => {
 
       {/* زر التالي */}
       <button
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-[44px] h-[44px] bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 hover:bg-gray-50 transition-all"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100 hover:bg-gray-50 transition-all"
         onClick={() => swiperRef?.slideNext()}
       >
         <svg

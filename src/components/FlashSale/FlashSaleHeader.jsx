@@ -5,7 +5,7 @@ const FlashSaleHeader = ({ title, description, time }) => {
         <h2 className="text-[26px] font-bold leading-[100%] text-[#222222]">
           {title}
         </h2>
-        <p className="max-w-[516px] text-[#22222280] font-['Open_Sans'] font-[400] text-[16px] leading-[140%]">
+        <p className="max-w-129 text-[#22222280] font-['Open_Sans'] font-normal text-[16px] leading-[140%]">
           {description}
         </p>
       </div>
@@ -13,7 +13,7 @@ const FlashSaleHeader = ({ title, description, time }) => {
       <img
         src={time}
         alt="Timer"
-        className="w-[110px] h-[110px] object-contain"
+        className="w-27.5 h-27.5 object-contain"
       />
     </div>
   );
