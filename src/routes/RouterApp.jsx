@@ -7,7 +7,8 @@ import ForgetPasswordPage from "../pages/ForgetPasswordPage";
 import HomePage from "../pages/HomePage";
 import MainLayout from "../layouts/MainLayout";
 import AboutusPage from "../pages/AboutusPage";
-
+import NotFondPage from "../pages/NotFondPage";
+import BookPage from "../pages/BookPage";
 
 export default function RouterApp() {
   return (
@@ -22,14 +23,8 @@ export default function RouterApp() {
           <Route path="forget-password" element={<ForgetPasswordPage />} />
           <Route path="add-code" element={<AddCodePage />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
-          <Route
-            path="*"
-            element={
-              <div className=" flex items-center justify-center h-80 w-full bg-backGrond text-scandColor text-5xl font-semibold ">
-                Error 404 | Not Fond
-              </div>
-            }
-          />
+          <Route path="book" element={<BookPage />} />
+          <Route path="*" element={<NotFondPage/>} />
         </Route>
       </Routes>
     </>

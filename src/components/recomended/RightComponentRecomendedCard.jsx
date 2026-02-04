@@ -13,8 +13,8 @@ export default function RightComponentRecomendedCard() {
             Author: <span className="text-[#222222]">Debbie Berne</span>
           </h4>
         </div>
-        <p className="w-88.5 text-[14px] text-[#22222280]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+        <p className="w-88.5 text-[14px] font-normal text-[#22222280]">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctiofit
           earum neque reiciendis ipsa expedita eius modi maxime veniam
           obcaecati, aliquam explicabo sit eligendi, minima qui? Recusandae
           assumenda modi sint! Consequuntur.

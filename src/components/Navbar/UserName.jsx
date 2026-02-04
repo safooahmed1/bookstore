@@ -24,7 +24,6 @@ export default function UserName() {
       // const userName = res.data.name;
       // const userEmail = res.data.email;
       // const userImage = res.data.image;
-
       return res.data;
     } catch (err) {
       console.error("Error", err.message);
@@ -32,6 +31,7 @@ export default function UserName() {
   }
 
   getProfile();
+  let imgD = false;
 
   return (
     <>
@@ -42,7 +42,15 @@ export default function UserName() {
             <RiShoppingCart2Line />
           </div>
           <div className="w-10 h-10 rounded-full bg-[#D9F99D] flex items-center justify-center text-[#0F172A] font-bold text-sm">
-            <img src={img} alt="" className="w-full rounded-full" />
+            {imgD ? (
+              <img src={img} alt="" className="w-full rounded-full" />
+            ) : (
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnkcqkUHsDulyGaMQk4mV7s9_d8-FW0x8ZOQ&s"
+                alt=""
+                className="w-full rounded-full"
+              />
+            )}
           </div>
           <div className="text-right flex flex-col">
             <span className="text-white text-sm font-bold leading-tight">
