@@ -9,7 +9,7 @@ export default function FlashSale() {
   const dummyItems = [1, 2, 3, 4]; // عدد الكروت
 
   return (
-    <div className="w-full bg-[#F5F5F5] h-176.5 py-4 border-t border-[#22222233]">
+    <div className="w-full bg-[#F5F5F5] h-176.5 flex items-center border-t border-[#22222233]">
       <div className="container mx-auto px-4">
         {/* المكون الأول: الرأس */}
         <FlashSaleHeader

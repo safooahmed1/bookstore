@@ -7,8 +7,11 @@ import SoBtn from "../components/Authentication/SoBtn";
 import toast, { Toaster } from "react-hot-toast";
 import { domain } from "../store/domain";
 import Herosection from "../components/HeroSection/Herosection";
+import { useAuthStore } from "../store";
 
 export default function LoginPage() {
+  const { login } = useAuthStore();
+
   const navigate = useNavigate();
 
   const validationSchema = Yup.object({
@@ -21,9 +24,10 @@ export default function LoginPage() {
 
     try {
       const res = await axios.post(url, values);
-      console.log(res.data);
+      const { token } = res.data.data;
+      login(token, values.rememberMe || false);
+      console.log(res.data.data.token);
       toast.success(res.data.message);
-      sessionStorage.setItem("token", res.data.data.token);
       navigate("/");
     } catch (error) {
       toast.error(error.response?.data?.message);
@@ -38,7 +42,7 @@ export default function LoginPage() {
 
         <div className="flex flex-col w-full items-center">
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ email: "", password: "", rememberMe: false }}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
@@ -62,6 +66,7 @@ export default function LoginPage() {
                 ask="Forget password?"
                 stet="Remember me"
                 btn="Log in"
+                name="rememberMe"
               />
             </Form>
           </Formik>

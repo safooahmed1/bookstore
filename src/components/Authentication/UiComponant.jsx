@@ -11,7 +11,6 @@ export default function UiComponant({ name, label, placeholder, type }) {
       <label >{label}</label>
       <div className='relative'>
         <Field
-
           name={name}
           type={isPassword && showPassword ? "text" : type}
           placeholder={placeholder}
