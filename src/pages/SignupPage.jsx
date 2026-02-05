@@ -34,6 +34,9 @@ export default function SignupPage() {
       navigate("/login");
     } catch (error) {
       console.log(error);
+      if (error.status == 500) {
+        toast.error("Your Email Is Orady Tekan");
+      }
     }
   };
   const SignupSchema = Yup.object({
@@ -57,7 +60,7 @@ export default function SignupPage() {
       .oneOf([Yup.ref("password")], "Passwords do not match")
       .required("Confirm password is required"),
 
-    // terms: Yup.boolean().oneOf([true], "You must accept the terms"),
+    terms: Yup.boolean().oneOf([true], "You must accept the terms"),
   });
 
   return (
@@ -121,7 +124,7 @@ export default function SignupPage() {
               ask=""
               stet=" Agree with Terms & Conditions"
               btn="Sign Up"
-              name="terms" 
+              name="terms"
             />
           </Form>
         </Formik>
