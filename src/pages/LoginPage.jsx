@@ -28,7 +28,7 @@ export default function LoginPage() {
       login(token, values.rememberMe || false);
       console.log(res.data.data.token);
       toast.success(res.data.message);
-      navigate("/");
+      // navigate("/");
     } catch (error) {
       toast.error(error.response?.data?.message);
     }

@@ -9,6 +9,7 @@ import MainLayout from "../layouts/MainLayout";
 import AboutusPage from "../pages/AboutusPage";
 import NotFondPage from "../pages/NotFondPage";
 import BookPage from "../pages/BookPage";
+import Profile from "../pages/Profile";
 
 export default function RouterApp() {
   return (
@@ -22,6 +23,7 @@ export default function RouterApp() {
           <Route path="signup" element={<SignupPage />} />
           <Route path="forget-password" element={<ForgetPasswordPage />} />
           <Route path="add-code" element={<AddCodePage />} />
+          <Route path="Profile" element={<Profile />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
           <Route path="book" element={<BookPage />} />
           <Route path="*" element={<NotFondPage/>} />

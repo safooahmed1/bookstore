@@ -39,12 +39,12 @@ export default function RightComponentRecomendedCard() {
         <div className="flex justify-between gap-4">
           <Button
             isMainBtn={true}
-            className="w-full text-white font-semibold text flex items-center justify-center gap-2 text-[16px]"
+            classn="w-full text-white font-semibold text flex items-center justify-center gap-2 text-[16px] rounded-lg  px-4 py-3 "
           >
             Add To Cart
             <LuShoppingCart />
           </Button>
-          <Button isMainBtn={false} className="w-fit text-mainColor text-xl">
+          <Button isMainBtn={false} classn="w-fit text-mainColor text-xl rounded-lg  px-4 py-3 ">
             <MdFavoriteBorder />
           </Button>
         </div>

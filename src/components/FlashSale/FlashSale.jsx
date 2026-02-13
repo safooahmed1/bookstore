@@ -3,7 +3,7 @@ import FlashSaleSlider from "./FlashSaleSlider";
 
 // استيراد الصور
 import time from "../../assets/images/time.png";
-import silider from "../../assets/images/silider.png";
+import silider from "../../assets/images/sectionlogo/silider.png";
 
 export default function FlashSale() {
   const dummyItems = [1, 2, 3, 4]; // عدد الكروت

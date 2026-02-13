@@ -3,34 +3,33 @@ import { RiShoppingCart2Line } from "react-icons/ri";
 import img from "../../assets/images/sectionlogo/7098886df02b2521176bde95e31347ff1428d87f.jpg";
 import DropdownNav from "./DropdownNav";
 import axios from "axios";
+import { useAuthStore } from "../../store";
+import { useEffect, useState } from "react";
+import { domain } from "../../store/domain";
 
 export default function UserName() {
-  async function getProfile() {
-    try {
-      const token = sessionStorage.getItem("token");
+  const token = useAuthStore((state) => state.token);
+  const [profile, setProfile] = useState(null);
 
-      const res = await axios.get(
-        "https://bookstore.eraasoft.pro/api/profile",
-        {
+  useEffect(() => {
+    const getProfile = async () => {
+      try {
+        const res = await axios.get( domain + "/api/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        },
-      );
+        });
 
-      console.log(res.data);
+        setProfile(res.data);
+      } catch (err) {
+        console.log("Error", err);
+      }
+    };
 
-      // محتاجة تعديل علي حسب الداتة اللي طلعة من api
-      // const userName = res.data.name;
-      // const userEmail = res.data.email;
-      // const userImage = res.data.image;
-      return res.data;
-    } catch (err) {
-      console.error("Error", err.message);
+    if (token) {
+      getProfile();
     }
-  }
-
-  getProfile();
+  }, [token]);
   let imgD = false;
 
   return (
@@ -52,14 +51,16 @@ export default function UserName() {
               />
             )}
           </div>
-          <div className="text-right flex flex-col">
-            <span className="text-white text-sm font-bold leading-tight">
-              John Smith
-            </span>
-            <span className="text-[#94A3B8] text-[10px]">
-              Johnsmith@gmail.com
-            </span>
-          </div>
+          {profile && (
+            <div className="text-right flex flex-col">
+              <span className="text-white text-sm font-bold leading-tight">
+                {profile.first_name}
+              </span>
+              <span className="text-[#94A3B8] text-[10px]">
+                {profile.email}
+              </span>
+            </div>
+          )}
           <DropdownNav />
         </div>
       </div>
