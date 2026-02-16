@@ -18,10 +18,10 @@ export default function BookPage() {
         <FilterSidebar />
         <div>
           <div className="flex gap-7 p-6 mt-9  justify-around">
-            <div className="   w-[558px]">
+            <div className="   w-139.5">
               <Search />
             </div>
-            <div className="w-[200px] ">
+            <div className="w-50 ">
               <Dropdown title="Sort by" className={"bg-[#0000001A]"}></Dropdown>
             </div>
           </div>

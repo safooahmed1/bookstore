@@ -13,7 +13,7 @@ export default function Profile() {
             <Herosection h="h-84.5" />
             <div className="flex items-center justify-center">
                 <div className=" container flex items-center justify-center flex-col relative h-screen">
-                    <div className="w-[180px] h-[180px] rounded-full absolute  -top-15" >
+                    <div className="w-45 h-45 rounded-full absolute  -top-15" >
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnkcqkUHsDulyGaMQk4mV7s9_d8-FW0x8ZOQ&s"
                             alt=""
@@ -35,7 +35,7 @@ export default function Profile() {
                                     <h1 className="text-[20px] text-[#222222] font-semibold text-center mt-7" >General information</h1>
                                 </div>
                                 <div className="mt-7 flex flex-col gap-4 ">
-                                    <div className="w-[736px] grid grid-cols-2 gap-5 ">
+                                    <div className="w-184 grid grid-cols-2 gap-5 ">
                                         <UiComponant
                                             name="firstname"
                                             label="First Name"

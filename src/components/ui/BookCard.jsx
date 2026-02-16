@@ -5,7 +5,7 @@ import { GrFavorite } from "react-icons/gr";
 export default function BookCard() {
   return (
     <div className="w-full flex flex-col lg:flex-row gap-8 border p-2 rounded-2xl">
-      <div className=" h-[255px]">
+      <div className=" h-63.75">
         <img src={book} alt="" className="h-full w-full  rounded-xl" />
       </div>
 
@@ -46,7 +46,7 @@ export default function BookCard() {
               <span className="text-[#222222] font-semibold">4.2</span>
             </div>
 
-            <div className="w-[220px] flex flex-col mt-2">
+            <div className="w-55 flex flex-col mt-2">
               <div className="text-[#22222280] text-sm flex justify-between">
                 <span>Author</span>
                 <span>Year</span>

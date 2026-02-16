@@ -39,10 +39,10 @@ export default function UserName() {
       <div className="flex items-center  w-full">
         <div className="flex items-center gap-3">
           <div className="flex gap-6 text-2xl pe-3">
-            <Link to={"/wishlist"} className="hover:text-mainColor hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor">
+            <Link to={"/wishlist"} className=" hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor">
               <GrFavorite />
             </Link>
-            <Link to={"/Cart"} className="hover:text-mainColor hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor" >
+            <Link to={"/Cart"} className=" hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor" >
               <RiShoppingCart2Line />
             </Link>
           </div>
