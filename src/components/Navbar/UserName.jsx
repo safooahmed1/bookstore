@@ -1,35 +1,37 @@
 import { GrFavorite } from "react-icons/gr";
 import { RiShoppingCart2Line } from "react-icons/ri";
-import img from "../../assets/images/sectionlogo/7098886df02b2521176bde95e31347ff1428d87f.jpg";
+import img from "../../assets/images/sectionlogo/user-headset 1.svg";
 import DropdownNav from "./DropdownNav";
 import axios from "axios";
-import { useAuthStore } from "../../store";
-import { useEffect, useState } from "react";
-import { domain } from "../../store/domain";
+import { Link } from "react-router-dom";
 
 export default function UserName() {
-  const token = useAuthStore((state) => state.token);
-  const [profile, setProfile] = useState(null);
+  async function getProfile() {
+    try {
+      const token = sessionStorage.getItem("token");
 
-  useEffect(() => {
-    const getProfile = async () => {
-      try {
-        const res = await axios.get( domain + "/api/profile", {
+      const res = await axios.get(
+        "https://bookstore.eraasoft.pro/api/profile",
+        {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        });
+        },
+      );
 
-        setProfile(res.data);
-      } catch (err) {
-        console.log("Error", err);
-      }
-    };
+      console.log(res.data);
 
-    if (token) {
-      getProfile();
+      // محتاجة تعديل علي حسب الداتة اللي طلعة من api
+      // const userName = res.data.name;
+      // const userEmail = res.data.email;
+      // const userImage = res.data.image;
+      return res.data;
+    } catch (err) {
+      console.error("Error", err.message);
     }
-  }, [token]);
+  }
+
+  getProfile();
   let imgD = false;
 
   return (
@@ -37,8 +39,12 @@ export default function UserName() {
       <div className="flex items-center  w-full">
         <div className="flex items-center gap-3">
           <div className="flex gap-6 text-2xl pe-3">
-            <GrFavorite />
-            <RiShoppingCart2Line />
+            <Link to={"/wishlist"} className="hover:text-mainColor hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor">
+              <GrFavorite />
+            </Link>
+            <Link to={"/Cart"} className="hover:text-mainColor hover:text-[#ae1e5f] hover:drop-shadow-lg hover:drop-shadow-mainColor" >
+              <RiShoppingCart2Line />
+            </Link>
           </div>
           <div className="w-10 h-10 rounded-full bg-[#D9F99D] flex items-center justify-center text-[#0F172A] font-bold text-sm">
             {imgD ? (
@@ -51,16 +57,14 @@ export default function UserName() {
               />
             )}
           </div>
-          {profile && (
-            <div className="text-right flex flex-col">
-              <span className="text-white text-sm font-bold leading-tight">
-                {profile.first_name}
-              </span>
-              <span className="text-[#94A3B8] text-[10px]">
-                {profile.email}
-              </span>
-            </div>
-          )}
+          <div className="text-right flex flex-col">
+            <span className="text-white text-sm font-bold leading-tight">
+              John Smith
+            </span>
+            <span className="text-[#94A3B8] text-[10px]">
+              Johnsmith@gmail.com
+            </span>
+          </div>
           <DropdownNav />
         </div>
       </div>

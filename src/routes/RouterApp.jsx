@@ -10,6 +10,10 @@ import AboutusPage from "../pages/AboutusPage";
 import NotFondPage from "../pages/NotFondPage";
 import BookPage from "../pages/BookPage";
 import Profile from "../pages/Profile";
+import ProductPage from "../pages/ProductPage";
+import CartPage from "../pages/CartPage";
+import WishList from "../pages/WishList";
+
 
 export default function RouterApp() {
   return (
@@ -26,7 +30,10 @@ export default function RouterApp() {
           <Route path="Profile" element={<Profile />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
           <Route path="book" element={<BookPage />} />
-          <Route path="*" element={<NotFondPage/>} />
+          <Route path="details" element={<ProductPage />} />
+          <Route path="Cart" element={<CartPage />} />
+          <Route path="wishlist" element={<WishList />} />
+          <Route path="*" element={<NotFondPage />} />
         </Route>
       </Routes>
     </>
