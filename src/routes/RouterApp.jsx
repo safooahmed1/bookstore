@@ -16,42 +16,41 @@ import WishList from "../pages/WishList";
 import { ProductDetails } from "../components/tabDetails/ProductDetails";
 import CustomerReviews from "../components/tabDetails/CustomerReviews";
 import MainRecomendedCard from "../components/recomended/MainRecomendedCard";
+import ProtectedRoute from "../components/auth/ProtectedRoute";
 
 export default function RouterApp() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          {/* Auth Pages */}
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutusPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="signup" element={<SignupPage />} />
-          <Route path="forget-password" element={<ForgetPasswordPage />} />
-          <Route path="add-code" element={<AddCodePage />} />
-          <Route path="Profile" element={<Profile />} />
-          <Route path="reset-password" element={<ResetPasswordPage />} />
-          <Route path="book" element={<BookPage />} />
-
-          <Route path="product/:productId" element={<ProductPage />}>
-            <Route path="details" element={<ProductDetails />} />
-            <Route path="review" element={<CustomerReviews />} />
-            <Route
-              path="recommided"
-              element={
-                <div className="flex gap-5">
-                  <MainRecomendedCard />
-                  <MainRecomendedCard />
-                </div>
-              }
-            />
-          </Route>
-
-          <Route path="Cart" element={<CartPage />} />
-          <Route path="wishlist" element={<WishList />} />
-          <Route path="*" element={<NotFondPage />} />
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutusPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="forget-password" element={<ForgetPasswordPage />} />
+        <Route path="add-code" element={<AddCodePage />} />
+        <Route path="reset-password" element={<ResetPasswordPage />} />
+        <Route path="book" element={<BookPage />} />
+        <Route path="product/:productId" element={<ProductPage />}>
+          <Route path="details" element={<ProductDetails />} />
+          <Route path="review" element={<CustomerReviews />} />
+          <Route path="recommided" element={
+            <div className="flex gap-5">
+              <MainRecomendedCard />
+              <MainRecomendedCard />
+            </div>
+          } />
         </Route>
-      </Routes>
-    </>
+        <Route path="Profile" element={
+          <ProtectedRoute><Profile /></ProtectedRoute>
+        } />
+        <Route path="Cart" element={
+          <ProtectedRoute><CartPage /></ProtectedRoute>
+        } />
+        <Route path="wishlist" element={
+          <ProtectedRoute><WishList /></ProtectedRoute>
+        } />
+        <Route path="*" element={<NotFondPage />} />
+      </Route>
+    </Routes>
   );
 }

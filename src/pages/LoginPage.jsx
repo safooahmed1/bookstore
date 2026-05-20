@@ -1,17 +1,15 @@
-import axios from "axios";
 import { Formik, Form } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import UiComponant from "../components/Authentication/UiComponant";
 import SoBtn from "../components/Authentication/SoBtn";
-import toast, { Toaster } from "react-hot-toast";
-import { domain } from "../store/domain";
+import toast from "react-hot-toast";
 import Herosection from "../components/HeroSection/Herosection";
 import { useAuthStore } from "../store";
+import api from "../services/api";
 
 export default function LoginPage() {
   const { login } = useAuthStore();
-
   const navigate = useNavigate();
 
   const validationSchema = Yup.object({
@@ -20,17 +18,14 @@ export default function LoginPage() {
   });
 
   const handleSubmit = async (values) => {
-    const url = domain + "/login";
-
     try {
-      const res = await axios.post(url, values);
+      const res = await api.post("/login", values);
       const { token } = res.data.data;
       login(token, values.rememberMe || false);
-      console.log(res.data.data.token);
       toast.success(res.data.message);
-      // navigate("/");
+      navigate("/");
     } catch (error) {
-      toast.error(error.response?.data?.message);
+      toast.error(error.response?.data?.message || "Login failed");
     }
   };
 
@@ -46,7 +41,7 @@ export default function LoginPage() {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            <Form className="w-200 p-4   flex flex-col gap-6">
+            <Form className="w-200 p-4 flex flex-col gap-6">
               <UiComponant
                 name="email"
                 label="Email"
@@ -60,7 +55,7 @@ export default function LoginPage() {
                 type="password"
               />
               <SoBtn
-                p="Don’t have an account?"
+                p="Don't have an account?"
                 to={"/signup"}
                 ptow=" Signup"
                 ask="Forget password?"

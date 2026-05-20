@@ -1,1 +1,1 @@
-export const domain="https://bookstore.eraasoft.pro/api";
+export const domain = import.meta.env.VITE_API_URL || "https://bookstore.eraasoft.pro/api";

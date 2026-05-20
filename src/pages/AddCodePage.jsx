@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
 import BtnType from "../components/ui/BtnType";
 import FieldInput from "../components/Authentication/FieldInput";
@@ -11,21 +12,13 @@ export default function AddCodePage() {
 
   const handleOnSubmit = async (values) => {
     try {
-      const endPoint = "/reset-password"; // غالبًا ده الصح
-      const url = domain + endPoint;
-
       const code = values.num1 + values.num2 + values.num3 + values.num4;
-
-      const res = await axios.post(url, { code });
-      console.log(res);
-
-      toast.success("Code verified successfully ✅");
-
-      // بعد نجاح الكود يروح لصفحة تغيير الباسورد
+      const res = await axios.post(domain + "/reset-password", { code });
+      sessionStorage.setItem("otp", code);
+      toast.success("Code verified successfully");
       navigate("/reset-password");
     } catch (error) {
-      toast.error(error.response?.data?.message || "Invalid code ❌");
-      console.log(error);
+      toast.error(error.response?.data?.message || "Invalid code");
     }
   };
 
@@ -36,28 +29,25 @@ export default function AddCodePage() {
         <h1 className="font-semibold text-mainColor text-2xl">
           Forget Password?
         </h1>
-        <p className=" text-center text-sm font-normal  text-[#22222280]">
+        <p className="text-center text-sm font-normal text-[#22222280]">
           Enter your email to reset your password
         </p>
 
-        <div className="flex flex-col w-full  items-center">
+        <div className="flex flex-col w-full items-center">
           <Formik
             initialValues={{ num1: "", num2: "", num3: "", num4: "" }}
-            onSubmit={(values) => {
-              handleOnSubmit(values);
-            }}
+            onSubmit={handleOnSubmit}
           >
             <Form className="w-full text-center">
               <div className="w-78 m-auto flex flex-col gap-10 font-bold">
-                <div className="flex  justify-center items-center gap-6">
+                <div className="flex justify-center items-center gap-6">
                   <FieldInput name="num1" type="text" />
                   <FieldInput name="num2" type="text" />
                   <FieldInput name="num3" type="text" />
                   <FieldInput name="num4" type="text" />
                 </div>
 
-                {/* Button */}
-                <BtnType btn="Reast Password" />
+                <BtnType btn="Reset Password" />
 
                 <div className="mt-5">
                   <p className="text-black font-semibold text-center ">

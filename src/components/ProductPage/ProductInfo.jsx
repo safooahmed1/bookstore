@@ -7,6 +7,7 @@ import { Rating } from "./Rating";
 import { StockBadge } from "./StockBadge";
 
 export function ProductInfo({
+  id,
   title,
   description,
   meta,
@@ -15,7 +16,11 @@ export function ProductInfo({
   stock,
   freeShipping,
   discountCode,
+  image,
+  author,
 }) {
+  const product = { id, title, price: price?.current, image, author };
+
   return (
     <div className="w-full flex flex-col gap-4">
       <ProductHeader title={title} description={description} />
@@ -28,13 +33,13 @@ export function ProductInfo({
           discountCode={discountCode}
         />
       </div>
-      <div className="flex justify-between"> 
-        <div className="">
+      <div className="flex justify-between">
+        <div>
           <Price {...price} />
         </div>
         <div className="flex gap-3">
           <QuantitySelector />
-          <ActionButtons />
+          <ActionButtons product={product} />
         </div>
       </div>
     </div>

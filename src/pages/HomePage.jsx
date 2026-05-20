@@ -3,6 +3,8 @@ import FlashSale from "../components/FlashSale/FlashSale";
 import Herosection from "../components/HeroSection/Herosection";
 import SectionRecomendedCard from "../components/recomended/SectionRecomendedCard";
 import Assemble from "../components/sectionhome/Assemble";
+import { useQuery } from "@tanstack/react-query";
+import api from "../services/api";
 
 export default function HomePage() {
   return (
